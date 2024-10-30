@@ -1,0 +1,79 @@
+*{
+    width: auto;
+    text-align: center;
+  
+    
+}
+
+header { 
+    text-align: center;
+    
+}
+
+.img{ 
+    background-image:url(./kim.jpg);
+    background-size: cover;
+    /* background-size : cover라는 태그로 잘린 이미지  */
+    width: 300px;
+    height: 300px;
+
+
+    margin:auto;
+    display: block;
+    /* 사진을 중앙정렬 하는 방법..  , 
+    그 영역을 부여했어야 했네. 
+    블록이라는 영역을 주고 거기서 중앙정렬이 되게 하면 가능했어!
+    */
+
+}
+
+a{
+    text-align: center;
+    font-weight: bold;
+    list-style-type: none;
+    color: black;
+    text-decoration: none;
+    
+}
+h1 {
+    
+    font-weight: bold;
+}
+
+h1>p {
+    color:gray
+}
+
+#name , #email, #message{
+    display: block;
+    
+}
+/* 이게 블록요소인데 왜 줄이 안바뀌지 
+form태그에 내가 display를 먹이려고 해서 그렇구나. 
+
+*/
+
+
+[type="textarea"]{
+    width: 100px;
+    height: 100px;
+}
+section{
+    text-align: center;
+}
+
+/* 아니 근데 위치를 다 마진값으로 조정해야 되나.? */
+
+table{
+ 
+    
+}
+
+h2, article { 
+    padding-right: 50%;
+
+}
+
+li{
+    list-style-type: none;
+}
