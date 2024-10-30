@@ -1,0 +1,122 @@
+/* Reset some default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Profile Picture styling */
+.profile {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+/* Links section styling */
+.links ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.links a:hover {
+    color: #0077cc;
+}
+
+/* Info table styling */
+.info-table {
+    margin: 20px 0;
+}
+
+.info-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.info-table th, .info-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-table th {
+    background-color: #333;
+    color: white;
+}
+
+/* Interests section styling */
+.interests ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+/* Contact form styling */
+.contact-form {
+    margin: 20px 0;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea, .contact-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.contact-form button:hover {
+    background-color: #555;
+}
