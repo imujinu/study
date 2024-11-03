@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1f1f1f;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #333;
+}
+
+.form{
+    text-align: center;
+    width: 30vw;
+    height: 80vh;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.text{
+    width: 100%;
+    background-color: #fff;
+}
+
+.reset{
+    background-color: red;
+    width: 75%;
+
+}
+
+.operator{
+    width: 25%;
+}
+
+.number{
+    width: 25%;
+}
+
+.operator_dot{
+    width: 25%;
+}

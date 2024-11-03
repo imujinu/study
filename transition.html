@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .btn{
+        width: 100px;
+        height: 100px;
+        transition: transform 0.4s ease, background-color 1s ease ;
+    }
+
+    /* 그러니까 이런 거잖아 transform에는 어떻게 변하고 싶은지를 입력하고
+    trasition에는 그 결과값을 어떻게 보여줄지 정하는거야. 
+    근데 이제 trasfrom에 없는 속성들이 있단 말이지. 색상을 변하게 하는 속성같은거. 
+    지금 생각해보니까 위치를 바꾸거나 모양을 바꾸는 것들이네. 꾸미는 건 따로 지정해줘야해. 
+    어쨌든 그런 것들도 다 명시가 가능하다. 
+    
+    */
+
+    .btn:hover{
+        transform: rotate(35deg);
+        background-color: blue;
+    }
+    
+
+</style>
+</head>
+<body>
+    
+    <button class = "btn"> 버튼입니다. </button>
+
+</body>
+</html>
