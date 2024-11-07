@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.tab {
+  padding: 10px;
+  background-color: lightgray;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.tab.active {
+  background-color: lightblue; /* 활성화된 탭 스타일 */
+}
+
+.tab-content {
+  display: none; /* 기본적으로 숨김 */
+  padding: 20px;
+  border-top: 1px solid #ccc;
+}
+
+.tab-content.active {
+  display: block; /* 활성화된 탭 내용만 보이기 */
+}
+
+    </style>
+</head>
+<body>
+    <section class="tabs">
+  <div class="tab">Tab 1</div>
+  <div class="tab">Tab 2</div>
+  <div class="tab">Tab 3</div>
+
+  <div class="tab-content">Content 1</div>
+  <div class="tab-content">Content 2</div>
+  <div class="tab-content">Content 3</div>
+</section>
+
+    <script>
+        const tab = document.querySelectorAll(".tab")
+        const tab_content = document.querySelectorAll(".tab-content")
+
+        tab.forEach( (el,index) => { 
+            el.addEventListener("click", () => // 화살표 함수  꼭 넣기! 나는 함수를 쑤는거니까!
+               { tab.forEach(al => al.classList.remove('active'))
+                tab_content.forEach(bl => bl.classList.remove('active'))
+            
+            el.classList.add("active")
+
+            tab_content[index].classList.add('active')}
+            )
+        } )
+        
+
+       tab[0].classList.add('active')
+       tab_content[0].classList.add('active')
+
+
+
+
+// 1. tab을 클릭했을 때 tab과 tabcontent에 부여된 모든 클래스가 제거된다. => .classlist.remove('active')
+// 2. 이후 내가 클릭한 것의 탭과 탭콘텐트에만 active를 부여해준다. 
+    </script>
+</body>
+</html>
