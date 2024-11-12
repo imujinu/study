@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <ul id="itemList">
+          <li>항목 1</li>
+          <li>항목 2</li>
+          <li>항목 3</li>
+        </ul>
+        <button id="addButton">항목 추가</button>
+        <button id="removeButton">항목 삭제</button>
+
+        <script>
+            let itemList = document.getElementById("itemList")
+            let addbtn = document.getElementById("addButton")
+            
+            let itemCount= 3 ; 
+
+            addbtn.addEventListener("click" , 
+                () => {
+                    const newItem = document.createElement('li');
+                    newItem.textContent = `새로운 항목 ${itemCount-3}`
+                    itemCount++;
+                    itemList.appendChild(newItem)
+                }
+            )
+        </script>
+
+        <!-- 아 queryselectorAll은 노드리스트로 반환되기 때문에 그걸 적용할 수 없는거구나. 요소가 아니야. 그니까 개별 요소여야 그게 적용이 되는데
+         그래서 위에서 그 itemList를 지정한거구나 -->
+         <!-- 뭔가를 할때 다 개별개별 개별의 요소로 생각을 해야해. 단순히 항목을 추가한다고 했을때 버튼을 눌렀을 때 li요소 추가 이게 아니고.
+          1. 버튼을 눌렀을 때 li요소가 추가 된다.
+          2. li요소 항목의 이름을 지정해주어야 한다. 단 이 이름은 고정값이 아닌 변수로 작성해야 한다. 행동이 무한히 반복될 수 있기 때문에.
+          3. li요소가 추가되는 걸 위치를 지정해주어야지. 어디서 만들어질지. 
+          여기서는 저거 이름을 변수로 지정하는게 제일 어려웠던 것 같은데. 기존의 그값을 미리 변수에 저장해놓고. 그 변수 -3부터 시작한다라고 
+          말을 해줬어야 하는거구나.
+          
+          제거 버튼을 만드는 원리 그러면.
+          1. 이벤트리스너로 클릭 시 itemList에서 요소를 제거한다고 할게 
+          근데 -->
+
+          innerhtml은 b태그가 b태그 그대로 보여진다. 
+
+</body>
+</html>

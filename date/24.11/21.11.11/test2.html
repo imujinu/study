@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력 필드 검증 및 애니메이션</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .error {
+            border: 2px solid red;
+        }
+        #warning {
+            display: none;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input-field" placeholder="텍스트 입력">
+    <button id="submit-btn">추가</button>
+    <p id="warning">입력 필드를 채워주세요!</p>
+    <ul id="text-list"></ul>
+
+    <script>
+//         조건: 사용자가 입력 필드에 텍스트를 입력한 후 버튼을 클릭하면 다음 조건에 따라 행동하세요:
+
+// 입력 필드가 비어 있으면 입력 필드의 테두리를 빨간색으로 변경하고, 화면에 경고 메시지를 애니메이션으로 보여주세요.
+// 입력 필드가 비어 있지 않으면 입력된 텍스트를 목록(ul)의 새 항목으로 추가하고 입력 필드는 초기화하세요.
+
+    $(document).ready(function(){
+        $('.submit-btn').click(function(){
+            if ( $('.input-field').val()==''){
+                function(){
+
+                }
+            }
+            else( ){
+                
+            }
+
+        })
+    })
+
+
+        
+    </script>
+</body>
+</html>

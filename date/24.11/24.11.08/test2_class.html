@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인터랙티브 메뉴</title>
+  <style>
+    .hidden { display: none; }
+    .highlight { color: red; }
+    .selected { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <button id="toggle-btn">메뉴 숨기기/보이기</button>
+  <nav id="menu">
+    <ul>
+      <li class="menu-item">메뉴 1</li>
+      <li class="menu-item">메뉴 2</li>
+      <li class="menu-item">메뉴 3</li>
+      <li class="menu-item">메뉴 4</li>
+    </ul>
+  </nav>
+<script>
+    // 버튼 클릭 시 nav의 hidden클래스를 토글한다. 그러면 click 이벤트 그리고, classlist.toggle("hidden") 이렇게 추가가 되어야 돼. 
+    // 근데 이러면 불충분해 왜. 
+
+    const btn = document.getElementById("toggle-btn")
+    const menu = document.getElementById("menu")
+
+    let change = btn.addEventListener("click", ()=>{
+        menu.classList.toggle("hidden")
+    })
+
+    const li = document.querySelectorAll("li")
+    for(let el of li){
+        el.class
+    }
+    
+
+
+
+</script>  
+</body>
