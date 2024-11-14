@@ -4,21 +4,34 @@
     box-sizing: content-box;
     list-style-type: none;
     font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
-
 }
 header{
-    position: relative;
+    /* position: relative; */
     width: 100vw;
-    height: 15vh;
+    height: 150px;
     background-color: #f6f5ef;
 }
 
 .headerul{
     display: flex;
-    justify-content: end;
-    width: 100vw;
+    justify-content: center;
+    width: 100%;
+    margin-left: 11%;
+    margin-top : -1.5%;
+    position: relative;
 }
 
+.fa-magnifying-glass{   
+    position: absolute;
+    top: 60%;
+    left: 62%;
+    font-size: 1rem;
+    border: 1px solid black;
+    border-radius: 10%;
+    padding: 0.3%;
+    background-color: white;
+
+}
 li{
     color:#555;
     font: normal 13px Avenir, Arial, georgia
@@ -26,39 +39,36 @@ li{
 
 .headerul > li{
     border-right: 1px solid rgb(204, 192, 192);
-    font-size: 15px;
-    margin-right: 10px; 
+    font-size: 0.8rem;
+    margin-right: 1%; 
     margin-top: 40px;
     padding-right: 5px;    
-       
+    
 }
 
 .header2{
     display: flex;
-    justify-content: space-around;
-    width: 80vw;
-    margin-left: 300px;
-    padding: 20px
+    justify-content: space-evenly;
+    width: 50%;
+    margin-top: 1.5%;
+    margin-left: 30%;
+    margin-bottom: 2%;
 }
 
 .header1{
     position: relative;
+    margin-bottom: 1%;
 }
 
 .logo{
     width: auto;
-    height: 80px;
+    height: 75px;
     position: absolute;
-    margin-left: 200px;
-    margin-top: 10px;
+    left: 21%;
+    top: 3%;
 
 }
 
-.fa-magnifying-glass{
-    margin-top: 40px;
-    
-
-}
 .background{
     background-image: url(./images/background.jpg);
     width: 100vw;
@@ -71,9 +81,7 @@ li{
 }
 
 .drinkimg{
-    width: 250px;
-    height: 250px;
-    position: absolute;;
+    position: absolute;
     object-fit: contain;
 }
 
@@ -82,23 +90,25 @@ li{
 }
 
 .banner1{
-    top: 200px;
-    right: 20px;
+    top: 16%;
+    right: 12%;
     width: auto;
-    height: 130px;
+    height: 100px;
+    z-index: 1;
 
 }
 
 .banner2{
-    top: 330px;
-    right: 20px;
+    top: 27%;
+    right: 12%;
     width: auto;
-    height: 130px;
+    height: 100px;
+    z-index: 1;
 }
 
 .drink1{
-    top: 200px;
-    right: 600px;
+    top: 20%;
+    right: 60%;
     z-index: 1;
 }
 
@@ -111,7 +121,7 @@ li{
 }
 
 .drink3{
-    top: 100px;
+    top: 20%;
     right: 350px;
 
 }
@@ -433,4 +443,96 @@ li{
     position: relative;
     top: 100px;
     right: 100px;
+}
+
+.section8{
+    width: 100%;
+    height: 50%;
+    background-image: url(./images/background3.jpg);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+}
+
+.banner4{
+    width: 350px;
+    height: 300px;
+    object-fit: contain;
+    left: 350px;
+    position: absolute;
+}
+
+.banner5{
+    width: 400px;
+    height: 200px;
+    object-fit: contain;
+    position: absolute;
+    left: 25%;
+    top: 40%;
+}
+
+.banner6{
+    position: absolute;
+    height: auto;
+    width: 300px;
+    left: 43%;
+}
+
+.section8text{
+    margin-top: 10%;
+    font-size: 16px;
+    
+    
+}
+
+.section8text p:first-child{
+    font-size: 30px
+}
+
+.section8text *:nth-child(2){
+    font-size: 20px;
+}
+
+.store1{
+    width: 200px;
+    height: auto;
+    position: relative;
+    left: 40%;
+   
+}
+
+.btn9{
+    border: 2px solid black;
+    border-radius: 5%;
+    width: 12%;
+    height: 10%;
+    position: relative;
+    bottom: 15%;
+
+}
+
+footer{
+    background-color: black;
+    
+}
+
+footer ul{
+    color: white;
+    position: relative;
+    top: 20px;
+    line-height: 250%;
+    
+    
+}
+
+footer li{
+    color: white;
+    
+}
+
+.textbox{
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 15%;
 }

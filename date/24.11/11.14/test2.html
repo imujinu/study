@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <!-- TODO1: jQuery CDN 불러오기 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
+
+    <style>
+      div {
+        width: 100;
+        height: 100;
+      }
+
+      div:hover {
+        cursor: pointer;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+      .orange {
+        background-color: orange;
+      }
+
+      .yellow {
+        background-color: yellow;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .blue {
+        background-color: blue;
+      }
+
+      .purple {
+        background-color: purple;
+      }
+    </style>
+    <script>
+      let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
+
+      // TODO2: changeColor 함수 내부 작성
+      function changeColor() {  
+        let div = document.querySelector('div') 
+        let nowclass = div.className
+        let i = colors.indexOf(nowclass)
+
+        if( i == 5) {
+            div.classList.replace(colors[5], colors[0])
+        }
+        else {
+            div.classList.replace(colors[i], colors[i+1])
+        }
+
+      }
+
+    //   그러니까 배열의 값을 뽑아내는 게 아니구나. 배열의 값을 indexof형태로 저장하는거얐어. 
+
+    
+  
+    </script>
+  </head>
+
+  <body>
+    <div class="red" onclick="changeColor();"></div>
+  </body>
+</html>

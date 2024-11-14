@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 실습1</title>
+    <!-- jQueru CDN 불러오기 -->
+
+   
+  </head>
+  <body>
+    <!-- 필요하다면 이미지 경로 변경 -->
+    <img src="./testimg/q.jpg" alt="과일" width="230px" height="200px" />
+    <br />
+    <button onclick="changeImg('apple')">사과</button>
+    <button onclick="changeImg('banana')">바나나</button>
+    <button onclick="changeImg('grapes')">포도</button>
+    <button onclick="changeImg('peaches')">복숭아</button>
+
+    <script>
+        function changeImg(name) {
+            let img = document.querySelector('img')
+            img.src=`./testimg/${name}.jpg`
+
+        }
+      </script>
+
+  </body>
+</html>
