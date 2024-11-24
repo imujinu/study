@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax , axios, fetch</title>
+
+    <!-- jQuery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form name="register">
+      <label>
+        이름 :
+        <input type="text" name="name" />
+      </label>
+
+      <label> <input type="radio" name="gender" value="male" />남자 </label>
+      <label> <input type="radio" name="gender" value="female" />여성 </label>
+
+      <br />
+      <span> <input type="button" onclick="ajaxGet()" />ajaxGet</span>
+      <span> <input type="button" onclick="ajaxPost()" />ajaxPost</span>
+
+      <div class="box"></div>
+    </form>
+
+    <script>
+      const box = document.querySelector(".box");
+      const form = document.forms["register"];
+
+      function ajaxGet() {
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+
+        $.ajax({
+          url: "/ajax",
+          type: "get",
+          data: data,
+
+          success: function (res) {
+            const { name, gender } = res;
+            box.textContent = `${name} ${gender}`;
+          },
+
+          error: function (err) {
+            console.error("errrr!!", err);
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
