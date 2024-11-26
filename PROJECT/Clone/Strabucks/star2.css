@@ -100,10 +100,6 @@ a {
   display: none;
 }
 
-.side2 ul {
-  display: none;
-}
-
 @media (max-width: 960px) {
   .header1,
   .header2,
@@ -231,15 +227,23 @@ a {
     text-decoration: underline;
     margin-top: 10px;
   }
-  .side-btn {
+  .sidebtn {
     width: 20px;
     object-fit: contain;
     margin-top: 10px;
     /* position: absolute; */
     right: 0;
   }
-  e4r .ulvisible {
-    display: block;
+
+  .submenu {
+    max-height: 0px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+  }
+
+  .submenu.open {
+    max-height: 200px;
+    overflow: visible;
   }
 }
 

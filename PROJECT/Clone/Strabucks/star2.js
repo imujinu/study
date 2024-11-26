@@ -115,3 +115,15 @@ for (let el of sidebtn) {
     el.style.toggle("ulvisible");
   });
 }
+
+document.querySelectorAll(".sidebtn").forEach((el) => {
+  const submenu = el.nextElementSibling;
+
+  el.addEventListener("click", () => {
+    if (submenu.classList.contains("open")) {
+      submenu.classList.remove("open");
+    } else {
+      submenu.classList.add("open");
+    }
+  });
+});

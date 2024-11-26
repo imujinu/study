@@ -31,28 +31,20 @@
         <label> 프로필사진 <input type="file" name="img" /> </label>
       </div>
       <button type="button" class="resetbtn">리셋</button>
-      <button type="submit">회원가입</button>
+      <button>회원가입</button>
 
       <br />
       <a href="/api">api이동</a>
-
-      <script>
-        const form = document.forms["register"];
-        const data = {
-          email: form.email.value,
-          pw: form.password.value,
-          name: form.name.value,
-          age: form.age.value,
-        };
-
-        function reset() {
-          form.reset();
-        }
-        const resetbtn = document.querySelector(".resetbtn");
-        resetbtn.addEventListener("click", reset);
-
-        function submit() {}
-      </script>
     </form>
+
+    <script>
+      const form = document.forms["register"];
+
+      function reset() {
+        form.reset();
+      }
+      const resetbtn = document.querySelector(".resetbtn");
+      resetbtn.addEventListener("click", reset);
+    </script>
   </body>
 </html>

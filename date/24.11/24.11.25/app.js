@@ -20,9 +20,7 @@ const uploadDetail = multer({
     },
     filename: function (req, file, done) {
       const extension = path.extname(file.originalname);
-      done(null, path.basename(file.originalname, extension)) +
-        new Date() +
-        extension;
+      done(null, path.basename(`uploads/${req.body.email}`) + extension);
     },
   }),
   limits: { fieldSize: 5 * 1024 * 1024 },
@@ -33,11 +31,11 @@ app.get("/", (req, res) => {
 });
 
 app.post("/result", uploadDetail.single("img"), (req, res) => {
-  console.log(req.file.path);
+  console.log(req.body.email);
   res.render("result", {
     userInfo: req.body,
+    img: req.file,
   });
-  console.log(req.body);
 });
 
 app.get("/api", (req, res) => {
@@ -45,10 +43,10 @@ app.get("/api", (req, res) => {
   res.render("api");
 });
 
-app.get("https://api.thecatapi.com/v1/images/search", (req, res) => {
-  console.log(req.query);
-  res.send(req.file);
-});
+// app.get("https://api.thecatapi.com/v1/images/search", (req, res) => {
+//   console.log(req.query);
+//   res.send(req.file);
+// });
 
 app.listen(PORT, () => {
   console.log(`https://localhost:${PORT}`);
