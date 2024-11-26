@@ -25,4 +25,7 @@ app.get("/ajax", (req, res) => {
   res.send(req.query);
 });
 
+app.post("/ajaxPost", (req, res) => {
+  res.send(req.body);
+});
 app.listen(PORT, () => {});

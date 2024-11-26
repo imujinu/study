@@ -107,3 +107,11 @@ navbar7.addEventListener("mouseleave", function () {
   menu7.classList.remove("hover");
   hbox7.classList.remove("boxtransform");
 });
+
+const sidebtn = document.querySelectorAll(".sidebtn");
+for (let el of sidebtn) {
+  el.addEventListener("click", () => {
+    el.style.remove("side2 ul");
+    el.style.toggle("ulvisible");
+  });
+}

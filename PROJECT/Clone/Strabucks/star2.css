@@ -100,7 +100,7 @@ a {
   display: none;
 }
 
-.side2 li {
+.side2 ul {
   display: none;
 }
 
@@ -163,8 +163,9 @@ a {
   .sidevar1 {
     width: 30%;
     height: 100%;
-    background: #787876e7;
+    background: black;
     position: absolute;
+    opacity: 0.4;
   }
 
   .sidevar2 {
@@ -237,10 +238,7 @@ a {
     /* position: absolute; */
     right: 0;
   }
-
-  .side2 ul,
-  li {
-    color: white;
+  e4r .ulvisible {
     display: block;
   }
 }

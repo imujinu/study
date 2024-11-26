@@ -1,0 +1,47 @@
+/* 기본 스타일 */
+.sidebar {
+  width: 300px;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.menu {
+  margin-bottom: 10px;
+}
+
+.menu-button,
+.submenu-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #00704a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.menu-button:hover,
+.submenu-button:hover {
+  background-color: #005233;
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 20px;
+  max-height: 0; /* 기본 숨김 */
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.submenu li {
+  padding: 5px 0;
+}
+
+.submenu li ul {
+  margin-top: 10px;
+}
+
+.submenu.open {
+  max-height: 500px; /* 펼쳐질 때 최대 높이 설정 */
+}

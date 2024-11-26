@@ -28,6 +28,9 @@
       <br />
       <span> <input type="button" onclick="ajaxGet()" />ajaxGet</span>
       <span> <input type="button" onclick="ajaxPost()" />ajaxPost</span>
+      <br />
+      <span> <input type="button" onclick="axiosGet()" />ajaxGet</span>
+      <span> <input type="button" onclick="axiosPost()" />ajaxPost</span>
 
       <div class="box"></div>
     </form>
@@ -57,6 +60,43 @@
           },
         });
       }
+
+      function ajaxPost() {
+        const form = document.forms["register"];
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+        };
+
+        $.ajax({
+          url: "/ajaxPost",
+          type: "post",
+          data: data,
+
+          success: function (res) {
+            console.log(res);
+
+            box.textContent = `이름은 ${res.name} 성별은 ${res.gender}`;
+          },
+
+          error: function (err) {
+            console.error(err);
+          },
+        });
+      }
+
+        function axiosGet(){
+          const form = document.forms['register']
+          const data = {
+            name : form.name.value,
+            gender : form.gender.value,
+          }
+
+          $.axios({
+            url :
+          })
+
+        }
     </script>
   </body>
 </html>
