@@ -5,7 +5,7 @@ document.querySelectorAll(".menu-button, .submenu-button").forEach((button) => {
     const submenu = button.nextElementSibling;
 
     // 서브메뉴 토글 (펼치기/접기)
-    if (submenu.classList.contains("open")) {
+    if (submenu.classList.contains("open")&&) {
       submenu.classList.remove("open"); // 접기
     } else {
       submenu.classList.add("open"); // 펼치기

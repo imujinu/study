@@ -108,22 +108,22 @@ navbar7.addEventListener("mouseleave", function () {
   hbox7.classList.remove("boxtransform");
 });
 
-const sidebtn = document.querySelectorAll(".sidebtn");
-for (let el of sidebtn) {
-  el.addEventListener("click", () => {
-    el.style.remove("side2 ul");
-    el.style.toggle("ulvisible");
-  });
-}
-
-document.querySelectorAll(".sidebtn").forEach((el) => {
+const btn = document.querySelectorAll(".sidebtn");
+btn.forEach((el) => {
   const submenu = el.nextElementSibling;
 
   el.addEventListener("click", () => {
-    if (submenu.classList.contains("open")) {
-      submenu.classList.remove("open");
-    } else {
-      submenu.classList.add("open");
-    }
+    submenu.classList.toggle("open");
+  });
+});
+
+const menubtn = document.querySelectorAll(".menubtn");
+const sidevar = document.querySelectorAll(".var");
+
+menubtn.forEach((el) => {
+  el.addEventListener("click", () => {
+    sidevar.forEach((al) => {
+      al.classList.toggle("open");
+    });
   });
 });
