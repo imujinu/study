@@ -1,0 +1,43 @@
+.container {
+  position: relative;
+  width: 380px;
+  height: 32px;
+  padding: 7px 15px;
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+}
+
+.title {
+  float: left;
+}
+
+.banner {
+  position: relative;
+  width: auto;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.banner li {
+  position: absolute;
+  top: 36px;
+}
+
+.banner li.current {
+  left: 0;
+  top: 0;
+  transition: top 0.5s ease;
+}
+
+.banner li.prev {
+  left: 0;
+  top: -36px;
+  transition: top 0.5s ease;
+}
+
+.banner li.next {
+  left: 0;
+  top: 36px;
+  transition: top 0.5s ease;
+}

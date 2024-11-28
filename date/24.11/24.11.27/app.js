@@ -51,10 +51,10 @@ app.post("/result", uploadDetail.single("file"), (req, res) => {
 
    */
   res.render("result", {
-    // userInfo : req.body,
+    // userInfo : req.body, userInfo라는 객체에 담아서 보내는 법과 ...spread? 맞나
 
     ...req.body,
-    img: req.file.path,
+    img: req.file.path, // 굳이 필요없는 값은 보내지 않아도 된다.
   });
 });
 app.listen(PORT, () => {

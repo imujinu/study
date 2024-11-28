@@ -1,0 +1,11 @@
+.menu-content {
+  max-height: 0; /* 숨김 상태 */
+  overflow: hidden;
+  transition: max-height 0.3s ease; /* 부드러운 전환 효과 */
+  background: #f4f4f4;
+  padding: 0 1em;
+}
+
+.menu-content.open {
+  max-height: 300px; /* 펼쳐질 때 최대 높이 */
+}
