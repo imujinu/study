@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- axios CDN -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form name="register">
+      <div>
+        <label> 아이디<input type="text" name="userId" required /> </label>
+      </div>
+      <div>
+        <label>
+          비밀번호<input type="password" name="userPw" required />
+        </label>
+      </div>
+      <button type="button" onclick="login()">로그인</button>
+    </form>
+    <div class="box"></div>
+    <script>
+      function login() {
+        const form = document.forms["register"];
+        const data = {
+          id: form.userId.value,
+          pw: form.userPw.value,
+        };
+        const box = document.querySelector(".box");
+
+        console.log(form.userId);
+        if (!form.userId.checkValidity() || !form.userPw.checkValidity()) {
+          box.innerHTML = "아이디 또는 비밀번호를 입력해주세요";
+          return;
+        }
+
+        axios({
+          url: "/login",
+          method: "post",
+          data: data,
+        }).then((res) => {
+          if (res.data.Login) {
+            console.log(res);
+            box.innerHTML = `${res.data.user}님 환영합니다`;
+            box.style.color = "blue";
+          } else {
+            box.innerHTML = "아이디 또는 패스워드 오류";
+            box.style.color = "red";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

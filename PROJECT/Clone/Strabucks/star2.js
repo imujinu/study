@@ -153,22 +153,32 @@ function scroll() {
 }
 
 const swiper = new Swiper(".swiper", {
+  spaceBetween: 10,
   loop: true,
-  slidesPerView: 3,
-  slidesPerGroup: 1,
-  centeredSlides: true,
-  autoplay: {
-    delay: 3000, // 슬라이드 이동 시간 간격
-    disableOnInteraction: false, // 버튼을 이용하여 컨트롤 한 이후에도 자동 재생 유지되도록
-  },
-  spaceBetween: 20,
   pagination: {
-    el: ".slider1 .pagination", // 해당 html의 클래스명 넣기
-    clickable: true, // 클릭하여 슬라이드 컨트롤을 가능케 함. default는 false임.
-    type: "fraction", // 해당 요소 추가시 현재 위치를 숫자로 알랴쥼 ex) 2/5 (다섯개의 슬라이드 중 2번째임)
-    renderBullet: function (index, className) {
-      // bullet을 커스텀 할 때 사용
-      return '<li class="' + className + '">' + (index + 1) + "</li>";
-    },
+    el: ".swiper-pagination",
+    clickable: true,
+    bulletActiveClass: "on",
   },
+  slidesPerView: 2,
+  slidesPerGroup: 1,
+  // loopAddtionalSlides: 2,
+  centeredSlides: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+});
+
+const section3btn = document.querySelector(".section3btn");
+section3btn.addEventListener("click", () => {
+  const section4 = document.querySelector(".section4");
+  section4.classList.toggle("hidden");
+  // section3btn.src = "./images/section3 btn.png";
 });
