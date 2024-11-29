@@ -1,21 +1,4 @@
-const user = require("../model/User");
-const user2 = require("../model/User2");
-
-exports.userLogin = (req, res) => {
-  const userInfo = user.userInfo();
-  console.log(userInfo);
-  console.log(req.body);
-  if (userInfo.userId === req.body.id && userInfo.userPw === req.body.pw) {
-    res.send({
-      Login: true,
-      user: userInfo.userId,
-    });
-  } else {
-    res.send({
-      Login: false,
-    });
-  }
-};
+const user2 = require("../model/user");
 
 exports.home = (req, res) => {
   res.render("index");
