@@ -43,7 +43,8 @@
         }).then((res) => {
           if (res.data.success) {
             box.innerHTML = `${res.data.name}님 환영합니다.`;
-          } else {
+          }
+          if (!res.data.success) {
             box.innerHTML = "아이디 또는 비밀번호를 잘못 입력했습니다.";
           }
         });

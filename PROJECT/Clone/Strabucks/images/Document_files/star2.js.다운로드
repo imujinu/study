@@ -182,19 +182,6 @@ section3btn.addEventListener("click", () => {
   section4.classList.toggle("hidden");
   // section3btn.src = "./images/section3 btn.png";
 });
-const slide = document.querySelectorAll(".swiper-slide");
-
-slide.forEach((el) => {
-  // const running = swiper.autoplay.running;
-  el.addEventListener("mouseenter", () => {
-    if (swiper.autoplay.running) swiper.autoplay.stop();
-  });
-  el.addEventListener("mouseleave", () => {
-    if (!swiper.autoplay.running) {
-      swiper.autoplay.start();
-    }
-  });
-});
 
 const stop = document.querySelector(".stop");
 stop.addEventListener("click", () => {
@@ -202,20 +189,19 @@ stop.addEventListener("click", () => {
   if (running) {
     swiper.autoplay.stop();
     stop.src = "./images/swiperstop.png";
-  }
-  if (!running) {
+  } else {
     swiper.autoplay.start();
     stop.src = "./images/swiperstop2.png";
   }
 });
 
-swiper.on("slideChange", () => {
-  const activeSlide = swiper.slides[swiper.activeIndex];
-  swiper.slides.forEach((slide) => {
-    slide.querySelector(".look").style.display = "none"; // 모든 슬라이드의 .look 요소 숨기기
+const slide = document.querySelectorAll(".swiper-slide");
+slide.forEach((el) => {
+  const running = swiper.autoplay.running();
+  el.addEventListener("mouseenter", () => {
+    swiper.autoplay.stop();
   });
-  const activeLook = activeSlide.querySelector(".look");
-  if (activeLook) {
-    activeLook.style.display = "block"; // 활성화된 슬라이드의 .look 요소 보이게 하기
-  }
+  el.addEventListener("mouseleave", () => {
+    if (!running) swiper.autoplay.start();
+  });
 });
