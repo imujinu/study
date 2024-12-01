@@ -179,9 +179,17 @@ const swiper = new Swiper(".swiper", {
 const section3btn = document.querySelector(".section3btn");
 section3btn.addEventListener("click", () => {
   const section4 = document.querySelector(".section4");
-  section4.classList.toggle("hidden");
-  // section3btn.src = "./images/section3 btn.png";
+  if (section4.classList.contains("hidden")) {
+    section4.classList.remove("hidden");
+    section4.classList.add("visible");
+    document.querySelector(".section3btn").src = "./images/section3 btn1.png";
+  } else if (section4.classList.contains("visible")) {
+    section4.classList.remove("visible");
+    section4.classList.add("hidden");
+    document.querySelector(".section3btn").src = "./images/section3 btn.png";
+  }
 });
+
 const slide = document.querySelectorAll(".swiper-slide");
 
 slide.forEach((el) => {
@@ -217,5 +225,18 @@ swiper.on("slideChange", () => {
   const activeLook = activeSlide.querySelector(".look");
   if (activeLook) {
     activeLook.style.display = "block"; // 활성화된 슬라이드의 .look 요소 보이게 하기
+  }
+});
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY; // 현재 스크롤 위치
+  // console.log(scrollY);
+  if (scrollY > 276) {
+    document
+      .querySelector(".section6 .inner1")
+      .classList.add("inner1animation");
+    document
+      .querySelector(".section6 .inner2")
+      .classList.add("inner2animation");
   }
 });

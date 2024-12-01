@@ -538,15 +538,20 @@ a {
   position: relative;
   top: 110px;
   height: 658px;
-  /* overflow: hidden; */
   transition: max-height 1s;
   background-color: #f6f5ef;
 }
 
 .hidden {
-  max-height: 100%;
-  transition: max-height 1s;
-  /* overflow: visible; */
+  max-height: 0;
+  transition: max-height 0.5s;
+  overflow: hidden;
+}
+
+.visible {
+  max-height: 540px;
+  transition: max-height 0.5s;
+  overflow: hidden;
 }
 
 .swiper {
@@ -574,21 +579,24 @@ a {
 }
 
 .swiper-pagination {
-  padding: 10px;
+  padding: 5px;
 }
 .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background-color: #fff;
   opacity: 0.5;
 }
-.swiper-pagination-bullet-active {
+.swiper-pagination-bullet.on {
   opacity: 1;
-  border: 3px solid green;
+  background-color: #fff;
+  width: 12px;
+  height: 12px;
+  background-image: url(./images/pagination.png);
 }
 
 .swiper-pagination-bullet:nth-child(n + 3) {
-  display: none; /* 3번째 이후의 bullet 숨기기 */
+  display: none;
 }
 
 .prevbtn {
@@ -643,7 +651,7 @@ a {
   width: 9px;
   /* background: red; */
   left: 48%;
-  bottom: 4.9%;
+  bottom: 4.5%;
   z-index: 9999;
 }
 
@@ -669,4 +677,186 @@ a {
   color: white;
   background-color: black;
   transition: 0.5s;
+}
+
+/* section5 */
+
+.section5 {
+  position: relative;
+  top: 110px;
+  width: 100%;
+  height: 160px;
+  background: #1e3932;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.inner {
+  width: 1080px;
+  margin: 0 auto;
+}
+.section5logo {
+  float: left;
+  text-align: center;
+}
+
+.section5logo2 {
+  width: 176px;
+}
+
+.section5part2 {
+  margin-left: 200px;
+  line-height: 120%;
+  color: white;
+  height: 100%;
+  width: 80%;
+}
+
+.section5part2 h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.section5text1part2 {
+  margin-top: 20px;
+  margin-bottom: 3%;
+}
+
+.section5text1 {
+  border-bottom: 0.1px solid #ffffff7b;
+}
+
+.section5text2 {
+  font-size: 0.8rem;
+  margin-top: 2%;
+}
+
+.section5btn {
+  position: absolute;
+  right: 15%;
+  top: 35%;
+}
+
+.section5btn a:first-child {
+  background: #00704a;
+  border: 2px solid #00704a;
+  color: white;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 38px;
+  line-height: 36px;
+  padding-left: 21.4px;
+  padding-right: 21.4px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.section5btn a:nth-child(2) {
+  border: 2px solid white;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 38px;
+  line-height: 36px;
+  padding-left: 21.4px;
+  padding-right: 21.4px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.section5btn2 {
+  position: absolute;
+  right: 15%;
+  top: 70%;
+  border: 1px solid white;
+  border-radius: 2px;
+  padding: 6px;
+}
+
+.section5 a:hover,
+.section5btn2:hover {
+  text-decoration: underline;
+}
+
+/* section6 */
+
+.section6 {
+  position: relative;
+  top: 110px;
+  width: 100%;
+  height: 578px;
+  background-image: url(./images/bean.inner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.inner1 {
+  position: absolute;
+  width: 15.95%;
+  height: 70%;
+  left: -15%;
+  top: 30%;
+}
+
+.inner1animation {
+  animation: inner1 1s ease-out forwards;
+}
+
+@keyframes inner1 {
+  100% {
+    left: 30%;
+  }
+}
+
+@keyframes inner2 {
+  100% {
+    right: 25%;
+  }
+}
+
+.inner1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.inner2 {
+  position: absolute;
+  right: -30%;
+  top: 45%;
+  color: white;
+  line-height: 150%;
+  font-size: 0.8rem;
+}
+
+.inner2animation {
+  animation: inner2 1s ease-out forwards;
+}
+
+.inner2 h1 {
+  margin: 10px 0;
+}
+
+.inner2 .text2 {
+  margin-top: 10%;
+  font-size: 15px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  width: 30%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  transition: 0.7s;
+}
+
+.inner2 .text2:hover {
+  background-color: #fff;
+  color: #88062a;
+  text-decoration: underline;
+  transition: 0.7s;
 }
