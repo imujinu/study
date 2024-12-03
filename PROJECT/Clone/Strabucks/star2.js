@@ -160,20 +160,30 @@ const swiper = new Swiper(".swiper", {
     clickable: true,
     bulletActiveClass: "on",
   },
-  slidesPerView: 2,
-  slidesPerGroup: 1,
-  // loopAddtionalSlides: 2,
-  centeredSlides: true,
+  breakpoints: {
+    960: { slidesPerView: 2, slidesPerGroup: 1, centeredSlides: true },
 
+    0: { slidesPerView: 1.2, centeredSlides: true },
+  },
   navigation: {
     nextEl: ".next",
     prevEl: ".prev",
   },
 
   autoplay: {
-    delay: 1500,
+    // delay: 1500,
     disableOnInteraction: false,
+    pauseOnMouseEnter: true,
   },
+});
+
+const wrapper = document.querySelector(".swiper-wrapper");
+const slides = document.querySelectorAll(".swiper-slide");
+
+// 슬라이드를 두 번 복제하여 추가
+slides.forEach((slide) => {
+  const clone = slide.cloneNode(true);
+  wrapper.appendChild(clone);
 });
 
 const section3btn = document.querySelector(".section3btn");
@@ -192,17 +202,17 @@ section3btn.addEventListener("click", () => {
 
 const slide = document.querySelectorAll(".swiper-slide");
 
-slide.forEach((el) => {
-  // const running = swiper.autoplay.running;
-  el.addEventListener("mouseenter", () => {
-    if (swiper.autoplay.running) swiper.autoplay.stop();
-  });
-  el.addEventListener("mouseleave", () => {
-    if (!swiper.autoplay.running) {
-      swiper.autoplay.start();
-    }
-  });
-});
+// slide.forEach((el) => {
+//   // const running = swiper.autoplay.running;
+//   el.addEventListener("mouseenter", () => {
+//     if (swiper.autoplay.running) swiper.autoplay.stop();
+//   });
+//   el.addEventListener("mouseleave", () => {
+//     if (!swiper.autoplay.running) {
+//       swiper.autoplay.start();
+//     }
+//   });
+// });
 
 const stop = document.querySelector(".stop");
 stop.addEventListener("click", () => {
@@ -210,8 +220,7 @@ stop.addEventListener("click", () => {
   if (running) {
     swiper.autoplay.stop();
     stop.src = "./images/swiperstop.png";
-  }
-  if (!running) {
+  } else if (!running) {
     swiper.autoplay.start();
     stop.src = "./images/swiperstop2.png";
   }
@@ -220,13 +229,27 @@ stop.addEventListener("click", () => {
 swiper.on("slideChange", () => {
   const activeSlide = swiper.slides[swiper.activeIndex];
   swiper.slides.forEach((slide) => {
-    slide.querySelector(".look").style.display = "none"; // 모든 슬라이드의 .look 요소 숨기기
+    slide.querySelector(".look").style.display = "none";
   });
   const activeLook = activeSlide.querySelector(".look");
   if (activeLook) {
-    activeLook.style.display = "block"; // 활성화된 슬라이드의 .look 요소 보이게 하기
+    activeLook.style.display = "block";
   }
 });
+
+// swiper.on("slideChange", () => {
+//   const activeIndex = swiper.activeIndex;
+
+//   if (activeIndex === 2 || activeIndex === 0) {
+//     swiper.pagination.bullets[1].classList.remove("on");
+//     swiper.pagination.bullets[0].classList.add("on");
+//   }
+
+//   if (activeIndex === 4 || activeIndex === 1) {
+//     swiper.pagination.bullets[0].classList.remove("on");
+//     swiper.pagination.bullets[1].classList.add("on");
+//   }
+// });
 
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY; // 현재 스크롤 위치
@@ -238,5 +261,41 @@ window.addEventListener("scroll", () => {
     document
       .querySelector(".section6 .inner2")
       .classList.add("inner2animation");
+  }
+});
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  // console.log(scrollY);
+  const banner = document.querySelector(".section8 .banner1");
+  const text = document.querySelector(".section8 .text1");
+
+  if (scrollY >= 1404) {
+    banner.style.left = "23%";
+    text.style.left = "13.5%";
+  } else if (scrollY < 1404) {
+    banner.style.left = "-25%";
+    text.style.left = "-30%";
+  }
+});
+
+/* section9 */
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  if (scrollY > 1970) {
+    document.querySelector(".section9 .banner1").classList.add("section9ani");
+  }
+});
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  if (scrollY > 2360) {
+    document.querySelectorAll(".section10 .img").forEach((el) => {
+      el.classList.add("section10ani");
+    });
+    document.querySelector(".section10 .text1").style.right = "20%";
+    document.querySelector(".section10 .text2").style.right = "20%";
+    document.querySelector(".section10 .text3").style.right = "37%";
   }
 });
