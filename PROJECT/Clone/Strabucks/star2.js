@@ -108,6 +108,12 @@ navbar7.addEventListener("mouseleave", function () {
   hbox7.classList.remove("boxtransform");
 });
 
+// for ( i=1; i <8 ; i++){
+//   navbar7.addEventListener("mouseleave", function () {
+//     menu7.classList.remove("hover");
+//     hbox7.classList.remove("boxtransform");
+//   });
+// }
 const btn = document.querySelectorAll(".sidebtn");
 btn.forEach((el) => {
   const submenu = el.nextElementSibling;
@@ -288,14 +294,86 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// window.addEventListener("DOMContentLoaded", () => {
+//   document.querySelector(".section10 .text1").style.right = "17.4% !important";
+//   document.querySelector(".section10 .text2").style.right = "17%";
+//   document.querySelector(".section10 .text3").style.right = "34%";
+// });
+
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
-  if (scrollY > 2360) {
-    document.querySelectorAll(".section10 .img").forEach((el) => {
-      el.classList.add("section10ani");
-    });
-    document.querySelector(".section10 .text1").style.right = "20%";
-    document.querySelector(".section10 .text2").style.right = "20%";
-    document.querySelector(".section10 .text3").style.right = "37%";
+  const width = window.innerWidth;
+  console.log(scrollY);
+  const section8banner2 = document.querySelector(".section8 .banner2");
+  const section8text1 = document.querySelector(".section8 .text1");
+  const section8text2 = document.querySelector(".section8 .text2");
+  if (width < 960) {
+    if (scrollY > 7900) {
+      section8banner2.style.opacity = "1";
+    } else {
+      section8banner2.style.opacity = "0";
+    }
+    if (scrollY > 8040) {
+      section8text1.style.opacity = "1";
+    } else {
+      section8text1.style.opacity = "0";
+    }
+
+    if (scrollY > 8200) {
+      section8text2.style.opacity = "1";
+    } else {
+      section8text2.style.opacity = "0";
+    }
   }
+});
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const section10text1 = document.querySelector(".section10 .text1 .m-img");
+  const section10text2 = document.querySelector(".section10 .text2 .m-img");
+  if (scrollY > 10550) {
+    section10text1.style.top = "50%";
+  } else {
+    section10text1.style.top = "-10%";
+  }
+  if (scrollY > 10650) {
+    section10text2.style.bottom = "20%";
+  } else {
+    section10text2.style.bottom = "-20%";
+  }
+});
+
+for (let i = 1; i <= 8; i++) {
+  document.querySelector(`.sidebtn${i}`).addEventListener("click", () => {
+    document.querySelector(`.ul${i}`).classList.toggle("ulhidden");
+    document.querySelector(`.ul${i}`).classList.toggle("ulvisible");
+  });
+}
+
+const crossbtn = document.querySelector(".crossbtn");
+const hpart1 = document.querySelector(".section1hpart1");
+const hpart2 = document.querySelector(".section1hpart2");
+const allcontainer = document.querySelector(".allcontainer");
+console.log(crossbtn);
+
+crossbtn.addEventListener("click", () => {
+  hpart1.classList.add("part1hidden");
+  hpart1.classList.remove("part1visible");
+
+  hpart2.classList.add("part2hidden");
+  hpart2.classList.remove("part2visible");
+
+  allcontainer.classList.remove("allcontainerhidden");
+});
+
+const ham = document.querySelector(".btnimg4");
+console.log(ham);
+ham.addEventListener("click", () => {
+  hpart1.classList.remove("part1hidden");
+  hpart1.classList.add("part1visible");
+
+  hpart2.classList.remove("part2hidden");
+  hpart2.classList.add("part2visible");
+
+  allcontainer.classList.add("allcontainerhidden");
 });
