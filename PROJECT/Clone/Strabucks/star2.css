@@ -1,6 +1,6 @@
 @font-face {
   font-family: "my-font";
-  src: url(./font/HelveticaNeueMedium.otf);
+  src: url(./font/HelveticaNeueBlack.otf) format("otf");
 }
 
 * {
@@ -8,9 +8,11 @@
   padding: 0;
   list-style-type: none;
   box-sizing: content-box;
-  font-family: Avenir, Arial, georgia;
 }
 
+body {
+  /* font-family: "Nanum Gothic", sans-serif; */
+}
 header {
   position: relative;
   width: 100%;
@@ -221,9 +223,9 @@ a {
 }
 .logo2 {
   position: absolute;
-  width: 23%;
-  top: 38%;
-  left: 12%;
+  width: 18%;
+  top: 35%;
+  left: 14%;
   opacity: 0;
   animation: opacity 1s forwards;
 }
@@ -231,45 +233,50 @@ a {
 .drink1 {
   opacity: 0;
   position: absolute;
-  top: 43.03%;
-  right: 33.7%;
-  width: 14.6%;
+  z-index: 8;
+  top: 41.64%;
+  left: 50.5%;
+  width: 13.2%;
   animation: opacity 1s 0.5s forwards;
 }
 
 .drink2 {
   opacity: 0;
   position: absolute;
-  top: 13%;
-  right: 29.55%;
-  width: 11.15%;
+  z-index: 8;
+  top: 27.39%;
+  left: 61%;
+  width: 11.95%;
   animation: opacity 1s 1s forwards;
 }
 
 .drink3 {
   opacity: 0;
   position: absolute;
-  top: 22.29%;
-  right: 18.45%;
-  width: 15.35%;
+  z-index: 8;
+  top: 21.51%;
+  left: 69.25%;
+  width: 11.4%;
   animation: opacity 1s 1.5s forwards;
 }
 
 .drink4 {
   opacity: 0;
   position: absolute;
-  top: 13%;
-  left: 44.5%;
-  width: 12.45%;
+  z-index: 8;
+  top: 27.55%;
+  left: 42.89%;
+  width: 12%;
   animation: opacity 1s 2s forwards;
 }
 
 .drink5 {
   opacity: 0;
   position: absolute;
-  top: 21.82%;
-  left: 36.8%;
-  width: 12.35%;
+  z-index: 9;
+  top: 12.53%;
+  left: 34.9%;
+  width: 11.95%;
   animation: opacity 1s 2.5s forwards;
 }
 
@@ -278,10 +285,10 @@ a {
   opacity: 0;
   position: absolute;
   width: 3%;
-  left: 20%;
-  top: 55%;
-  color: #dc143c;
-  border: 2px solid #dc143c;
+  left: 19%;
+  top: 60%;
+  color: white;
+  border: 2px solid white;
   padding: 0.6% 0;
   font-size: 90%;
   border-radius: 4px;
@@ -1212,6 +1219,7 @@ a {
     height: 76px;
     line-height: 76px;
     font-size: 28px;
+    padding-left: 20px;
   }
 
   .section1hpart2 .part2 ul {
@@ -1219,7 +1227,7 @@ a {
     width: 100%;
   }
 
-  .section1hpart2 .part2 ul li:first-child {
+  .section1hpart2 .part2 > ul > li:first-child {
     background-color: #2d2926;
   }
 
@@ -1247,7 +1255,9 @@ a {
     right: 5%;
     top: 40%;
   }
-
+  .section1hpart2 .part2 ul > ul {
+    padding-left: 20px;
+  }
   .crossbtn {
     position: absolute;
     width: 30px;

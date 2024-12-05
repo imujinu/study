@@ -10,110 +10,22 @@ btn1.addEventListener("click", function () {
   search1.classList.add("btntransform");
 });
 
-let navbar = document.querySelector(".nav1");
-let menu = document.querySelector(".menu1");
-let hbox = document.querySelector(".box1");
+/* section2 */
 
-navbar.addEventListener("mouseenter", function () {
-  menu.classList.add("hover");
-  hbox.classList.add("boxtransform");
-});
+for (let i = 1; i < 8; i++) {
+  document.querySelector(`.nav${i}`).addEventListener("mouseenter", () => {
+    document.querySelector(`.menu${i}`).classList.add("hover");
+    document.querySelector(`.box${i}`).classList.add("boxtransform");
+  });
+}
 
-navbar.addEventListener("mouseleave", function () {
-  menu.classList.remove("hover");
-  hbox.classList.remove("boxtransform");
-});
+for (let i = 1; i < 8; i++) {
+  document.querySelector(`.nav${i}`).addEventListener("mouseleave", () => {
+    document.querySelector(`.menu${i}`).classList.remove("hover");
+    document.querySelector(`.box${i}`).classList.remove("boxtransform");
+  });
+}
 
-let navbar2 = document.querySelector(".nav2");
-let menu2 = document.querySelector(".menu2");
-let hbox2 = document.querySelector(".box2");
-
-navbar2.addEventListener("mouseenter", function () {
-  menu2.classList.add("hover");
-  hbox2.classList.add("boxtransform");
-});
-
-navbar2.addEventListener("mouseleave", function () {
-  menu2.classList.remove("hover");
-  hbox2.classList.remove("boxtransform");
-});
-
-let navbar3 = document.querySelector(".nav3");
-let menu3 = document.querySelector(".menu3");
-let hbox3 = document.querySelector(".box3");
-
-navbar3.addEventListener("mouseenter", function () {
-  menu3.classList.add("hover");
-  hbox3.classList.add("boxtransform");
-});
-
-navbar3.addEventListener("mouseleave", function () {
-  menu3.classList.remove("hover");
-  hbox3.classList.remove("boxtransform");
-});
-
-let navbar4 = document.querySelector(".nav4");
-let menu4 = document.querySelector(".menu4");
-let hbox4 = document.querySelector(".box4");
-
-navbar4.addEventListener("mouseenter", function () {
-  menu4.classList.add("hover");
-  hbox4.classList.add("boxtransform");
-});
-
-navbar4.addEventListener("mouseleave", function () {
-  menu4.classList.remove("hover");
-  hbox4.classList.remove("boxtransform");
-});
-
-let navbar5 = document.querySelector(".nav5");
-let menu5 = document.querySelector(".menu5");
-let hbox5 = document.querySelector(".box5");
-
-navbar5.addEventListener("mouseenter", function () {
-  menu5.classList.add("hover");
-  hbox5.classList.add("boxtransform");
-});
-
-navbar5.addEventListener("mouseleave", function () {
-  menu5.classList.remove("hover");
-  hbox5.classList.remove("boxtransform");
-});
-
-let navbar6 = document.querySelector(".nav6");
-let menu6 = document.querySelector(".menu6");
-let hbox6 = document.querySelector(".box6");
-
-navbar6.addEventListener("mouseenter", function () {
-  menu6.classList.add("hover");
-  hbox6.classList.add("boxtransform");
-});
-
-navbar6.addEventListener("mouseleave", function () {
-  menu6.classList.remove("hover");
-  hbox6.classList.remove("boxtransform");
-});
-
-let navbar7 = document.querySelector(".nav7");
-let menu7 = document.querySelector(".menu7");
-let hbox7 = document.querySelector(".box7");
-
-navbar7.addEventListener("mouseenter", function () {
-  menu7.classList.add("hover");
-  hbox7.classList.add("boxtransform");
-});
-
-navbar7.addEventListener("mouseleave", function () {
-  menu7.classList.remove("hover");
-  hbox7.classList.remove("boxtransform");
-});
-
-// for ( i=1; i <8 ; i++){
-//   navbar7.addEventListener("mouseleave", function () {
-//     menu7.classList.remove("hover");
-//     hbox7.classList.remove("boxtransform");
-//   });
-// }
 const btn = document.querySelectorAll(".sidebtn");
 btn.forEach((el) => {
   const submenu = el.nextElementSibling;
@@ -177,7 +89,7 @@ const swiper = new Swiper(".swiper", {
   },
 
   autoplay: {
-    // delay: 1500,
+    delay: 1500,
     disableOnInteraction: false,
     pauseOnMouseEnter: true,
   },
@@ -186,10 +98,9 @@ const swiper = new Swiper(".swiper", {
 const wrapper = document.querySelector(".swiper-wrapper");
 const slides = document.querySelectorAll(".swiper-slide");
 
-// 슬라이드를 두 번 복제하여 추가
 slides.forEach((slide) => {
   const clone = slide.cloneNode(true);
-  wrapper.appendChild(clone);
+  wrapper.append(clone);
 });
 
 const section3btn = document.querySelector(".section3btn");
@@ -205,20 +116,6 @@ section3btn.addEventListener("click", () => {
     document.querySelector(".section3btn").src = "./images/section3 btn.png";
   }
 });
-
-const slide = document.querySelectorAll(".swiper-slide");
-
-// slide.forEach((el) => {
-//   // const running = swiper.autoplay.running;
-//   el.addEventListener("mouseenter", () => {
-//     if (swiper.autoplay.running) swiper.autoplay.stop();
-//   });
-//   el.addEventListener("mouseleave", () => {
-//     if (!swiper.autoplay.running) {
-//       swiper.autoplay.start();
-//     }
-//   });
-// });
 
 const stop = document.querySelector(".stop");
 stop.addEventListener("click", () => {
@@ -243,23 +140,8 @@ swiper.on("slideChange", () => {
   }
 });
 
-// swiper.on("slideChange", () => {
-//   const activeIndex = swiper.activeIndex;
-
-//   if (activeIndex === 2 || activeIndex === 0) {
-//     swiper.pagination.bullets[1].classList.remove("on");
-//     swiper.pagination.bullets[0].classList.add("on");
-//   }
-
-//   if (activeIndex === 4 || activeIndex === 1) {
-//     swiper.pagination.bullets[0].classList.remove("on");
-//     swiper.pagination.bullets[1].classList.add("on");
-//   }
-// });
-
 window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY; // 현재 스크롤 위치
-  // console.log(scrollY);
+  const scrollY = window.scrollY;
   if (scrollY > 276) {
     document
       .querySelector(".section6 .inner1")
@@ -272,7 +154,6 @@ window.addEventListener("scroll", () => {
 
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
-  // console.log(scrollY);
   const banner = document.querySelector(".section8 .banner1");
   const text = document.querySelector(".section8 .text1");
 
@@ -294,16 +175,9 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// window.addEventListener("DOMContentLoaded", () => {
-//   document.querySelector(".section10 .text1").style.right = "17.4% !important";
-//   document.querySelector(".section10 .text2").style.right = "17%";
-//   document.querySelector(".section10 .text3").style.right = "34%";
-// });
-
 window.addEventListener("scroll", () => {
   const scrollY = window.scrollY;
   const width = window.innerWidth;
-  console.log(scrollY);
   const section8banner2 = document.querySelector(".section8 .banner2");
   const section8text1 = document.querySelector(".section8 .text1");
   const section8text2 = document.querySelector(".section8 .text2");
@@ -354,7 +228,6 @@ const crossbtn = document.querySelector(".crossbtn");
 const hpart1 = document.querySelector(".section1hpart1");
 const hpart2 = document.querySelector(".section1hpart2");
 const allcontainer = document.querySelector(".allcontainer");
-console.log(crossbtn);
 
 crossbtn.addEventListener("click", () => {
   hpart1.classList.add("part1hidden");
@@ -367,7 +240,6 @@ crossbtn.addEventListener("click", () => {
 });
 
 const ham = document.querySelector(".btnimg4");
-console.log(ham);
 ham.addEventListener("click", () => {
   hpart1.classList.remove("part1hidden");
   hpart1.classList.add("part1visible");
