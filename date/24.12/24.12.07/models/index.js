@@ -12,29 +12,14 @@ const sequelize = new Sequelize(
   config
 );
 
-const user = sequelize.define(
-  "user",
-  {
-    name: DataTypes.STRING,
-    age: DataTypes.INTEGER,
-  },
-  {
-    timestamps: false,
-    freezeTableName: false,
-  }
-);
 
-const post = sequelize.define("post", {
-  title: DataTypes.STRING,
-  content : DataTypes.TEXT,
-
-});
-
+const user = require('./user')(sequelize,DataTypes)
+const post = require('./post')(sequelize,DataTypes)
 user.hasMany (post , {foreignkey : 'userId'})
 post.belongsTo(user)
 
-db.user = user;
-db.post = post;
+db.user = user
+db.post = post
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 

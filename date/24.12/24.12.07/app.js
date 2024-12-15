@@ -9,8 +9,6 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const { sequelize } = require("./models/index");
-
 sequelize.sync({ force: false }).then(() => {
   console.log("db연결완료");
 });
