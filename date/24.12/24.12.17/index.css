@@ -1,0 +1,305 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
+  list-style-type: none;
+}
+
+a {
+  text-decoration-line: none !important;
+  color: inherit !important;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.section1 {
+  width: 100%;
+  height: 120px;
+  position: fixed;
+  background: #ffcdd4;
+  z-index: 99;
+}
+
+.section1 .title {
+  width: 20%;
+  height: 200%;
+  position: absolute;
+  top: -50%;
+}
+
+.section1 .container {
+  width: 100%;
+  height: 120px;
+  position: relative;
+}
+
+.section1 .part1 {
+  width: 30%;
+  display: flex;
+  position: absolute;
+  top: 10%;
+  right: -10%;
+}
+
+.section1 .part1 ul {
+  width: 65%;
+  height: auto;
+  display: flex;
+  text-align: right;
+}
+
+.section1 .part1 li {
+  width: 100%;
+  border-right: 1px solid black;
+  padding-right: 1%;
+}
+
+.section1 .part2 {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 50%;
+}
+
+.section1 .part2 .navbar {
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+
+.section1 .part2 li {
+  font-size: 20px;
+}
+
+.section1 .part2 > .container2 {
+  position: absolute;
+  left: 30%;
+  width: 50%;
+  height: 100%;
+}
+
+.section1 .part2 .store {
+  text-align: center;
+  width: 20%;
+  padding: 2% 0;
+  transition: 0.5s;
+}
+
+.section1 .part3 {
+  position: absolute;
+  left: 35%;
+  top: 100%;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+}
+
+.section1 .part3 .menu {
+  width: 50%;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.section2 {
+  width: 100%;
+  top: 120px;
+  height: 600px;
+  display: flex;
+  position: relative;
+}
+
+.section2 > .part1 {
+  width: 30%;
+  height: 100%;
+  background: #fff3f4;
+  text-align: right;
+  position: relative;
+}
+
+.section2 .part1 .contents p:nth-child(1) {
+  font-size: 1.5rem;
+}
+.section2 .title {
+  left: -100%;
+  position: absolute;
+  font-size: 2rem;
+  top: 15%;
+  animation: ani1 1s forwards;
+}
+
+.section2 .contents {
+  left: -100%;
+  top: 35%;
+  position: absolute;
+  line-height: 30px;
+  animation: ani2 1.5s forwards;
+}
+
+@keyframes ani1 {
+  100% {
+    left: 30%;
+  }
+}
+
+@keyframes ani2 {
+  100% {
+    left: 20%;
+  }
+}
+
+@keyframes ani3 {
+  100% {
+    opacity: 1;
+  }
+}
+.section2 > .part2 {
+  width: 70%;
+  height: 100%;
+  background: url(./image/bg1.png) center/cover no-repeat;
+  opacity: 0;
+  animation: ani3 2s forwards;
+}
+
+.section2 .detail {
+  position: absolute;
+  width: 30%;
+  text-align: center;
+  top: 70%;
+  left: 40%;
+  border: 2px solid #ffcdd4;
+  color: black;
+  padding: 3% 0;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.detail:hover {
+  transition: 0.5s;
+  background-color: red;
+}
+
+.section3 {
+  width: 100%;
+  height: 400px;
+  border-bottom: 5px solid black;
+  position: relative;
+  margin-top: 10%;
+}
+
+.section3 img {
+  width: 100%;
+  height: 100%;
+}
+
+.section3 .swiper {
+  position: relative;
+  margin-top: 5%;
+  width: 90%;
+  height: 100%;
+}
+
+.section3 .swiper img {
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.section3 .swiper-slide {
+  width: 100%;
+  height: 80%;
+}
+
+.swiper-pagination {
+  color: red;
+  padding: 5px;
+}
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  color: red;
+  background-color: red;
+  opacity: 1;
+}
+
+.section3 .modal1 {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 11;
+  bottom: 0;
+  display: flex;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.section3 .modalContent {
+  width: 60%;
+  height: 100vh;
+  overflow-y: scroll;
+  object-fit: cover;
+  position: fixed;
+}
+
+.section3 .modalCloseBtn {
+  position: fixed;
+  bottom: 0;
+}
+
+.section4 {
+  width: 100%;
+  height: 100px;
+  border-bottom: 5px solid black;
+}
+
+.section4 .part1 {
+  font-size: 30px;
+}
+
+.section4 .part2 ul {
+  width: 20%;
+  display: flex;
+}
+
+.section4 .part2 ul li {
+  border: 2px solid black;
+  margin-right: 2%;
+}
+
+.section5 .swiper2 {
+  width: 100%;
+  height: 200px;
+}
+
+.section6,
+.section7,
+.section8 {
+  width: 100%;
+  height: 200px;
+}
+
+.section5 img,
+.section6 img,
+.section7 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.section5 .swiper-slide {
+  flex: 0 0 auto;
+  width: 160px;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
